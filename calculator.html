@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        background-color: aquamarine;
+    }
+    .container{
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        height: 100vh;
+    }
+.calculator{
+    width: 550px;
+    border-radius: 25px;
+    border: 2px dotted;
+    background-color: white;
+    text-align: center;
+    justify-content: center;
+    padding: 35px;
+
+}
+input[type="number"]{
+    padding: 5px;
+    width: 250px;
+    height: 20px;
+    background-color: white;
+    border: 2px solid;
+}
+button{
+    width: 40px;
+    height: 30px;
+    font-size: 25px;
+}
+button:hover{
+    background-color: aqua;
+}
+h1{
+    font-style: oblique;
+}
+h1::first-letter{
+    font-size: 60px;
+}
+
+</style>
+<body>
+    <div class="container">
+        <div class="calculator">
+            <h1 style="margin-bottom: 25px;">Simple calculator</h1>
+            <input type="number" id="one" style="margin-bottom: 20px;" placeholder="Enter First Number"><br>
+            <input type="number" id="two" style="margin-bottom: 20px;" placeholder="Enter Second Number">
+            <br>
+            <button onclick="add()">+</button>
+            <button onclick="sub()">-</button>
+            <button onclick="mul()">*</button>
+            <button onclick="div()">/</button>
+            <button onclick="mod()">%</button>
+            <h3 style="margin-top: 20px;">Answer is : <span id="ans"></span></h3>
+        </div>
+    </div>
+</body>
+<script>
+    var a=document.getElementById("one")
+    var b=document.getElementById("two")
+    function add(){
+        var c=Number(a.value)+Number(b.value)
+        console.log(c)
+        document.getElementById("ans").innerHTML=c
+    }
+    function sub(){
+        var c=Number(a.value)-Number(b.value)
+        console.log(c)
+        document.getElementById("ans").innerHTML=c
+    }
+    function mul(){
+        var c=Number(a.value)*Number(b.value)
+        console.log(c)
+        document.getElementById("ans").innerHTML=c
+    }
+    function div(){
+        var c=Number(a.value)/Number(b.value)
+        console.log(c)
+        document.getElementById("ans").innerHTML=c
+    }
+    function mod(){
+        var c=Number(a.value)%Number(b.value)
+        console.log(c)
+        document.getElementById("ans").innerHTML=c
+    }
+</script>
+</html>
